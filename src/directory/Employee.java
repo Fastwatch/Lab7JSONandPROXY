@@ -1,6 +1,6 @@
 package directory;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
 	private String LastName;
 	private String FirstName;
@@ -60,5 +60,14 @@ public class Employee {
 	@Override
 	public String toString() {
 		return FirstName + " " + LastName + " (" + Phone + ") " + Department;
+	}
+
+
+
+	@Override
+	public int compareTo(Employee other) {
+		// TODO Auto-generated method stub
+		int last = this.LastName.compareTo(other.LastName);
+        return last == 0 ? this.FirstName.compareTo(other.FirstName) : last;
 	}
 }
