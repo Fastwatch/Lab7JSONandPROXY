@@ -7,4 +7,5 @@ public interface Directory {
 	public void add(String s);
 	public void clr();
 	
+	
 }
