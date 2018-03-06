@@ -27,8 +27,38 @@ public class DirectoryEditor {
 		in.close();
 	}
 	
-	private static void consoleInput(Scanner in) {
+	private static boolean inputSanitation(String input[]) {
+		boolean isSanitized = true;
+
+
+		if(input.length != 4 && input.length != 1) {
+			isSanitized = false;
+		}
+
+		if(!isSanitized) {
+			System.out.println("Invalid format. Please enter in format \"[First Name] [Last Name] [Department] [Phone Number] \"");
+		}
 		
+		return isSanitized;
+	}
+	
+	private static void consoleInput(Scanner in) {
+			String rawInput;
+			String input[];
+			rawInput = in.nextLine();
+			input = rawInput.split(" ");
+			
+			//Check to see if input is correct
+
+			if(!inputSanitation(input)) {
+				//Failed sanitation check
+			} else {
+				//Input is good to go
+				if(input.equals("")) {
+					
+				}
+			}
+
 	}
 	
 	private static void fileInput(Scanner in) {
