@@ -15,10 +15,10 @@ public class DirectoryEditor {
 			response = in.nextLine();
 			switch(response.toUpperCase()) {
 			case "F":
-				fileInput();
+				fileInput(in);
 				break;
 			case "C":
-				consoleInput();
+				consoleInput(in);
 				break;
 			}
 			
@@ -27,11 +27,11 @@ public class DirectoryEditor {
 		in.close();
 	}
 	
-	private static void consoleInput() {
+	private static void consoleInput(Scanner in) {
 		
 	}
 	
-	private static void fileInput() {
+	private static void fileInput(Scanner in) {
 		
 	}
 	
