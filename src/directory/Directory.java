@@ -1,17 +1,8 @@
 package directory;
 
-public class Directory {
-	
-	public void add(){
-		
-	}
-	
-	public void print() {
-		
-	}
-	
-	public void clear() {
-		
-	}
+public interface Directory {
 
+	public String print();
+	public void add(String s);
+	public void clr();
 }
