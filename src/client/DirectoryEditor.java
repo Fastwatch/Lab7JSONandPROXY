@@ -87,8 +87,6 @@ public class DirectoryEditor {
 		
 		file = new File(fileName);
 		
-		
-		
 		if(!file.exists() || !file.isFile()) {
 			System.out.println("File does not exist");
 			return;
@@ -108,9 +106,9 @@ public class DirectoryEditor {
 				}else if(line.equals("ADD")) {
 					canAdd = true;
 				}else if(line.equals("CLR")) {
-					
+					dirp.clr();
 				}else if(line.equals("PRINT")) {
-					
+					dirp.print();
 				}
 				
 			}
