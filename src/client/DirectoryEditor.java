@@ -57,7 +57,8 @@ public class DirectoryEditor {
 			if(!inputSanitation(input)) {
 				//Failed sanitation check
 			} else {
-
+				//Input is good to go
+				
 				if(input[0].equalsIgnoreCase("Add")) {
 					//Go to add loop (until end)					
 				}
