@@ -4,11 +4,11 @@ import directory.*;
 
 public class DirectoryProxy implements Directory {
 
-	private static MainDirectory md;
+	private static MainDirectory md = new MainDirectory();
 	
 	@Override
 	public void print() {
-		return md.print();
+		md.print();
 	}
 
 	@Override

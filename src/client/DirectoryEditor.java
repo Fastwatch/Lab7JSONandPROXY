@@ -11,30 +11,31 @@ import java.util.Scanner;
 import directory.Employee;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class DirectoryEditor {
 	
-	private static DirectoryProxy dirp;
+	private static DirectoryProxy dirp = new DirectoryProxy();
 	private static List<Employee> emp = new ArrayList<Employee>();
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String response;
-		
+		boolean exit = false;
 		do {
 			System.out.println("File (F) or Console (C) Input, or Exit (E)?");
 			response = in.nextLine();
 			switch(response.toUpperCase()) {
 			case "F":
 				fileInput(in);
+				exit = true;
 				break;
 			case "C":
 				consoleInput(in);
+				exit = true;
 				break;
 			}
 			
-		}while(!response.equalsIgnoreCase("e"));
+		}while(!response.equalsIgnoreCase("e") || exit);
 		
 		in.close();
 	}
@@ -109,6 +110,7 @@ public class DirectoryEditor {
 					dirp.clr();
 				}else if(line.equals("PRINT")) {
 					dirp.print();
+					System.out.println();
 				}
 				
 			}
