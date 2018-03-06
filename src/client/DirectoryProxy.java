@@ -4,22 +4,21 @@ import directory.*;
 
 public class DirectoryProxy implements Directory {
 
+	private static MainDirectory md;
+	
 	@Override
-	public String print() {
-		// TODO Auto-generated method stub
-		return null;
+	public void print() {
+		return md.print();
 	}
 
 	@Override
 	public void add(String s) {
-		// TODO Auto-generated method stub
-		
+		md.add(s);
 	}
 
 	@Override
 	public void clr() {
-		// TODO Auto-generated method stub
-		
+		md.clr();
 	}
 
 }
