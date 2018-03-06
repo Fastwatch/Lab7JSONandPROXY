@@ -93,11 +93,19 @@ public class DirectoryEditor {
 		try (BufferedReader br = new BufferedReader(new FileReader(fileName));){
 			
 			String line;
+			boolean canAdd = false;
 			
 			while ((line = br.readLine()) != null) {
-				if(line.equals("add")) {
-					//add input
-				} else if(line.equals("end")) {
+				if(line.equals("END")) {
+					canAdd = false;
+					sendData();
+				}else if(canAdd) {
+					addEmp(line);
+				}else if(line.equals("ADD")) {
+					canAdd = true;
+				}else if(line.equals("CLR")) {
+					
+				}else if(line.equals("PRINT")) {
 					
 				}
 				
@@ -108,10 +116,18 @@ public class DirectoryEditor {
 		
 	}
 	
-	private String sendData(ArrayList<Employee> l) {
+	private static void sendData() {
 		Gson g = new Gson();
-		dirp.add(g.toJson(l));
-		l.clear();
+		dirp.add(g.toJson(emp));
+		emp.clear();
+	}
+	
+	private static void addEmp(String line) {
+		String[] e = line.split(" ");
+		if(e.length == 4) {
+			Employee tmp = new Employee(e[1], e[0], e[3], e[2]);
+			emp.add(tmp);
+		}
 	}
 	
 }
