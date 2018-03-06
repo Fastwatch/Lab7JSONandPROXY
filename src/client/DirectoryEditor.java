@@ -46,9 +46,13 @@ public class DirectoryEditor {
 		if(input.length != 4 && input.length != 1) {
 			isSanitized = false;
 		}
+		
+		if(input.length == 1) {
+			//Check if it is a valid command
+		}
 
 		if(!isSanitized) {
-			System.out.println("Invalid format. Please enter in format \"[First Name] [Last Name] [Department] [Phone Number] \"");
+			System.out.println("Invalid format. Please enter command, or enter employee in format \"[First Name] [Last Name] [Department] [Phone Number] \"");
 		}
 		
 		return isSanitized;
@@ -65,9 +69,9 @@ public class DirectoryEditor {
 			if(!inputSanitation(input)) {
 				//Failed sanitation check
 			} else {
-				//Input is good to go
-				if(input.equals("")) {
-					
+
+				if(input[0].equalsIgnoreCase("Add")) {
+					//Go to add loop (until end)					
 				}
 			}
 
