@@ -34,43 +34,26 @@ public class DirectoryEditor {
 		in.close();
 	}
 	
-	private static boolean inputSanitation(String input[]) {
-		boolean isSanitized = true;
-
-
-		if(input.length != 4 && input.length != 1) {
-			isSanitized = false;
-		}
-		
-		if(input.length == 1) {
-			//Check if it is a valid command
-		}
-
-		if(!isSanitized) {
-			System.out.println("Invalid format. Please enter command, or enter employee in format \"[First Name] [Last Name] [Department] [Phone Number] \"");
-		}
-		
-		return isSanitized;
-	}
-	
 	private static void consoleInput(Scanner in) {
-			String rawInput;
-			String input[];
+		String rawInput;
+		String input[];
+		boolean consoleInput = true;
+		boolean add = false;
+		
+		while(consoleInput) {
+
 			rawInput = in.nextLine();
 			input = rawInput.split(" ");
 			
-			//Check to see if input is correct
-
-			if(!inputSanitation(input)) {
-				//Failed sanitation check
-			} else {
-				//Input is good to go
-				
-				if(input[0].equalsIgnoreCase("Add")) {
-					//Go to add loop (until end)					
-				}
+			if(add) {	
+				if(input.length == 4) {
+					
+				} else if(input.length == 1) {
+					
+				}	
+					
 			}
-
+		}
 	}
 	
 	private static void fileInput(Scanner in) {
