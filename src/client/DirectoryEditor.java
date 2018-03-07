@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import directory.Employee;
-
 import com.google.gson.Gson;
+
+import directory.Employee;
 
 public class DirectoryEditor {
 	
@@ -20,22 +20,16 @@ public class DirectoryEditor {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String response;
-		boolean exit = false;
-		do {
-			System.out.println("File (F) or Console (C) Input, or Exit (E)?");
-			response = in.nextLine();
-			switch(response.toUpperCase()) {
-			case "F":
-				fileInput(in);
-				exit = true;
-				break;
-			case "C":
-				consoleInput(in);
-				exit = true;
-				break;
-			}
-			
-		}while(!response.equalsIgnoreCase("e") || exit);
+		
+		System.out.println("File (F) or Console (C) Input?");
+		response = in.nextLine();
+		if(response.equalsIgnoreCase("F")) {
+			fileInput(in);
+
+		} else if (response.equalsIgnoreCase("C")) {
+			consoleInput(in);
+		}
+
 		
 		in.close();
 	}
