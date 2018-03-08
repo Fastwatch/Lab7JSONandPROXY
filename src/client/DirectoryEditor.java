@@ -35,23 +35,38 @@ public class DirectoryEditor {
 	}
 	
 	private static void consoleInput(Scanner in) {
-		String rawInput;
-		String input[];
+		String input;
 		boolean consoleInput = true;
-		boolean add = false;
+		boolean canAdd = false;
+		
+		System.out.println("Type \"Exit\" at any time to end program");
+
 		
 		while(consoleInput) {
 
-			rawInput = in.nextLine();
-			input = rawInput.split(" ");
-			
-			if(add) {	
-				if(input.length == 4) {
-					
-				} else if(input.length == 1) {
-					
-				}	
-					
+			while ((input = in.nextLine()) != null) {
+
+				
+				if(input.equals("Exit")) {
+					consoleInput = false;
+					break;
+				}else if(input.equals("END")) {
+					canAdd = false;
+					sendData();
+				}else if(canAdd) {
+					if(input.split(" ").length == 4) {
+						addEmp(input);
+					} else {
+						System.out.println("Please enter employee while in Add mode, or type \"END\" to stop Add mode");
+					}
+				}else if(input.equals("ADD")) {
+					canAdd = true;
+				}else if(input.equals("CLR")) {
+					dirp.clr();
+				}else if(input.equals("PRINT")) {
+					dirp.print();
+					System.out.println();
+				}
 			}
 		}
 	}
