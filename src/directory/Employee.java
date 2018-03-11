@@ -6,56 +6,15 @@ public class Employee implements Comparable<Employee> {
 	private String FirstName;
 	private String Phone;
 	private String Department;
-	
+
 	
 	
 	public Employee(String lastName, String firstName, String phone, String department) {
-		LastName = lastName;
-		FirstName = firstName;
+		LastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+		FirstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
 		Phone = phone;
-		Department = department;
+		Department = department.toUpperCase();
 	}
-	
-	
-	public String getLastName() {
-		return LastName;
-	}
-
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
-
-
-	public String getFirstName() {
-		return FirstName;
-	}
-
-
-	public void setFirstName(String firstName) {
-		FirstName = firstName;
-	}
-
-
-	public String getPhone() {
-		return Phone;
-	}
-
-
-	public void setPhone(String phone) {
-		Phone = phone;
-	}
-
-
-	public String getDepartment() {
-		return Department;
-	}
-
-
-	public void setDepartment(String department) {
-		Department = department;
-	}
-
 
 	@Override
 	public String toString() {

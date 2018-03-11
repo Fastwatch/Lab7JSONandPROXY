@@ -38,15 +38,5 @@ public class MainDirectory implements Directory{
 	public void clr() {
 		employeeList.clear();		
 	}
-	
-	public static class Comparators {
-
-        public static Comparator<Employee> NAME = new Comparator<Employee>() {
-            @Override
-            public int compare(Employee e1, Employee e2) {
-                return e1.compareTo(e2);
-            }
-        };
-	}
 
 }
